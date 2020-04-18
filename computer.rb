@@ -9,7 +9,7 @@ class Computer
   end
 
   def inspect
-    puts "computer memory usage: #{usage}"
+    "computer memory usage: #{usage}"
   end
 
   # delegate return [](method_names)
