@@ -9,3 +9,23 @@ begin
 rescue => e
   puts e.message
 end
+
+# test private method not execute.
+class Counter
+  def initialize
+    @count = 0
+  end
+
+  private
+
+  def i
+    @count += 1
+  end
+end
+
+c = Counter.new
+begin
+  c.i
+rescue NoMethodError
+  puts c.instance_variable_get('@count')
+end
