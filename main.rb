@@ -5,7 +5,7 @@ puts computer.inspect
 
 computer1 = Computer.new
 begin
-  puts computer.usage
+  puts computer1.usage
 rescue => e
   puts e.message
 end

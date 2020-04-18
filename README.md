@@ -8,5 +8,17 @@
 
 ### How to delegate methods in rails as private
 
+##### 在 Rails 6 之前
+
+```ruby
+private *delegate(:usage, to: '@memory')
+```
+
+##### 在 Rails 6 之后
+
+```ruby
+delegate :usage, to: '@memory', private: true
+```
+
 * https://blog.eq8.eu/til/how-to-delegate-methods-in-rails-as-private.html
 * https://stackoverflow.com/questions/15643172/make-delegated-methods-private

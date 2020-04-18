@@ -4,8 +4,6 @@ require_relative 'memory'
 require 'active_support/core_ext/module/delegation'
 
 class Computer
-  delegate :usage, to: '@memory'
-
   def initialize
     @memory = Memory.new
   end
@@ -13,4 +11,9 @@ class Computer
   def inspect
     puts "computer memory usage: #{usage}"
   end
+
+  # delegate return [](method_names)
+  # private *delegate(:usage, to: '@memory')
+  delegate(:usage, to: '@memory')
+  private :usage
 end
